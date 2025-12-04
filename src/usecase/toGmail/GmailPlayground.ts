@@ -1,5 +1,5 @@
-import { GmailService } from "src/service/gmail/GmailService";
 import { BlobService } from "src/service/common/BlobService";
+import { GmailService } from "src/service/gmail/GmailService";
 
 /**
  * シナリオケース: Gmail送信の動作確認用Playground.
