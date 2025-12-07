@@ -11,12 +11,8 @@ const CleanupPlugin = {
   name: "cleanup-dist",
   setup(build) {
     build.onStart(() => {
-      const distDir = path.resolve("dist");
-      if (!fs.existsSync(distDir)) {
-        return;
-      }
-
       try {
+        const distDir = path.resolve("dist");
         fs.rmSync(distDir, { recursive: true, force: true });
         console.log("✅ successfully removed dist/ directory");
       } catch (error) {
@@ -68,7 +64,12 @@ if (isWatch) {
   await buildContext.watch();
   console.log("👀 watching for changes...");
 } else {
-  await buildContext.rebuild();
-  await buildContext.dispose();
-  console.log("✅ build completed.");
+  try {
+    await buildContext.rebuild();
+    await buildContext.dispose();
+    console.log("✅ successfully built to dist/");
+  } catch (error) {
+    console.error("❌ failed to build to dist/", error);
+    process.exit(1);
+  }
 }
