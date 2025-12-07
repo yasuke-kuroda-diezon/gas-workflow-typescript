@@ -8,11 +8,14 @@
   },
   "scripts": {
     "build": "node esbuild.js",
+    "build:watch": "node esbuild.js --watch",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "format": "prettier --write 'src/**'",
     "pull": "clasp pull",
     "push": "clasp push",
     "open": "clasp open-script",
-    "release": "npx tsc --noEmit && npm run build && npm run push",
-    "format": "prettier --write 'src/**'"
+    "release": "npm run type-check && npm run build && npm run push"
   },
   "devDependencies": {
     "@google/clasp": "^3.1.3",

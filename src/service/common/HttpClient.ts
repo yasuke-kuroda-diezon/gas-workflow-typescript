@@ -23,7 +23,7 @@ export class HttpClient {
     try {
       const httpResponse: HTTPResponse = this.getUrlFetchApp().fetch(
         url,
-        options
+        options,
       );
       const contentText = httpResponse.getContentText();
       try {

@@ -63,7 +63,7 @@ export class AbstractSpreadsheetService {
     }
 
     throw new Error(
-      "現時点ではスタンドアロン型で onOpen の実行方法がわかりません... コンテナ型で実行して下さい。"
+      "現時点ではスタンドアロン型で onOpen の実行方法がわかりません... コンテナ型で実行して下さい。",
     );
   }
 }

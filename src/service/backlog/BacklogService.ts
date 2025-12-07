@@ -22,7 +22,7 @@ export class BacklogService extends AbstractBacklogService {
   constructor(
     backlogDomain: string | null,
     backlogApiKey: string | null,
-    httpClient: HttpClient
+    httpClient: HttpClient,
   ) {
     if (!backlogDomain || backlogDomain === "null") {
       throw new EnvNotFoundError(EnvKey.BACKLOG_DOMAIN);
@@ -37,7 +37,7 @@ export class BacklogService extends AbstractBacklogService {
     return new BacklogService(
       EnvService.get(EnvKey.BACKLOG_DOMAIN),
       EnvService.get(EnvKey.BACKLOG_API_KEY),
-      new HttpClient()
+      new HttpClient(),
     );
   }
 
@@ -102,10 +102,10 @@ export class BacklogService extends AbstractBacklogService {
       ActivityTypeList.ADD_COMMENT_NOTIFICATION,
     ];
     const allowedActivityTypes = ActivityTypes.filter((ActivityType) =>
-      allowedActivityTypeKeys.includes(ActivityType.key)
+      allowedActivityTypeKeys.includes(ActivityType.key),
     );
     const allowedActivityTypeIds = allowedActivityTypes.map(
-      (ActivityType) => ActivityType.id
+      (ActivityType) => ActivityType.id,
     );
 
     const query = {

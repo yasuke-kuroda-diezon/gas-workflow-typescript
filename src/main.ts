@@ -22,15 +22,15 @@ function main() {
   SlackPlayground.execute();
 
   // gmail動作確認
-  NotifyUnreadMailCountToSlack.execute();
+  // NotifyUnreadMailCountToSlack.execute();
 
   // backlog動作確認
-  NotifyIssueToSlack.execute(IssueKeyType.HZY_SHARED_1);
-  NotifyMyActivitiesToSlack.execute();
-  NotifyMyselfToSlack.execute();
+  // NotifyIssueToSlack.execute(IssueKeyType.HZY_SHARED_1);
+  // NotifyMyActivitiesToSlack.execute();
+  // NotifyMyselfToSlack.execute();
 
   // spreadsheet動作確認
-  WriteMyselfToSpreadsheet.execute();
+  // WriteMyselfToSpreadsheet.execute();
 }
 
 interface Global {

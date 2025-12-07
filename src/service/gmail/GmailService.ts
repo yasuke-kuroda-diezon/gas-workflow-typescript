@@ -24,7 +24,7 @@ export class GmailService {
     const gmailThreads: GmailThread[] = this.getGmailApp().search(query);
     const total = gmailThreads.reduce(
       (sum, gmailThread) => sum + gmailThread.getMessageCount(),
-      0
+      0,
     );
     return total;
   }
@@ -40,7 +40,7 @@ export class GmailService {
     recipient: string,
     subject: string,
     body: string,
-    options: GmailAdvancedOptions = {}
+    options: GmailAdvancedOptions = {},
   ): GmailApp {
     return this.getGmailApp().sendEmail(recipient, subject, body, options);
   }
